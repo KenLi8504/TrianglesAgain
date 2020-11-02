@@ -62,10 +62,10 @@ class Triangle{
 
   public String classify (){
     double x,y,z;
-    x = (Math.round(v1.distanceTo(v2) * 10000)) / 10000;
-    y = (Math.round(v2.distanceTo(v3) * 10000)) / 10000;
-    z = (Math.round(v3.distanceTo(v1) * 10000)) / 10000;
-    if (x == y && y == z){
+    x = (Math.round(v1.distanceTo(v2) * 10000.0)) / 10000.0;
+    y = (Math.round(v2.distanceTo(v3) * 10000.0)) / 10000.0;
+    z = (Math.round(v3.distanceTo(v1) * 10000.0)) / 10000.0;
+    if (x == y && y == z && x == z){
       return "equilateral";
     }
     else if (x == y || y == z || x == z){
