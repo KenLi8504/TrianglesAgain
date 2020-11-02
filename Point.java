@@ -50,4 +50,13 @@ class Triangle{
     z = v3.distanceTo(v1);
     return (x+y+z);
   }
+
+  public double getArea(){
+    double x,y,z,a;
+    x = v1.distanceTo(v2);
+    y = v2.distanceTo(v3);
+    z = v3.distanceTo(v1);
+    a = (x+y+z)/2;
+    return (Math.sqrt(a*(a-x)*(a-y)*(a-z)));
+  }
 }
