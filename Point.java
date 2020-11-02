@@ -60,19 +60,35 @@ class Triangle{
     return (Math.sqrt(a*(a-x)*(a-y)*(a-z)));
   }
 
-  public String Classify (){
+  public String classify (){
     double x,y,z;
     x = (Math.round(v1.distanceTo(v2) * 10000)) / 10000;
     y = (Math.round(v2.distanceTo(v3) * 10000)) / 10000;
     z = (Math.round(v3.distanceTo(v1) * 10000)) / 10000;
-    if (x == y && y ==z){
-      return "Equilateral";
+    if (x == y && y == z){
+      return "equilateral";
     }
     else if (x == y || y == z || x == z){
-      return "Isosceles";
+      return "isosceles";
     }
     else {
-      return "Scalene";
+      return "scalene";
+    }
+  }
+
+  public String toString (){
+    return ("v1(" + v1.getX() + ", " + v1.getY() + ") v2(" + v2.getX() + ", " + v2.getY() + ") v3(" + v3.getX() + ", " + v3.getY() + ")" );
+  }
+
+  public void setVertex(int index, Point newP){
+    if (index == 0){
+      v1 = newP;
+    }
+    else if (index == 1){
+      v2 = newP;
+    }
+    else{
+      v3 = newP;
     }
   }
 }
