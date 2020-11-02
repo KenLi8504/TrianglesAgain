@@ -59,4 +59,20 @@ class Triangle{
     a = (x+y+z)/2;
     return (Math.sqrt(a*(a-x)*(a-y)*(a-z)));
   }
+
+  public String Classify (){
+    double x,y,z;
+    x = (Math.round(v1.distanceTo(v2) * 10000)) / 10000;
+    y = (Math.round(v2.distanceTo(v3) * 10000)) / 10000;
+    z = (Math.round(v3.distanceTo(v1) * 10000)) / 10000;
+    if (x == y && y ==z){
+      return "Equilateral";
+    }
+    else if (x == y || y == z || x == z){
+      return "Isosceles";
+    }
+    else {
+      return "Scalene";
+    }
+  }
 }
